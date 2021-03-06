@@ -241,7 +241,7 @@ $primary-background-color: #ecf5ff;
           outline-offset: 0px;
   
           &.active{
-            outline: 2px solid $primary-color;
+            outline: 1px solid $primary-color;
             border: 1px solid $primary-color;
             outline-offset: 0;
           }
@@ -252,7 +252,7 @@ $primary-background-color: #ecf5ff;
         }
   
         &.active{
-          outline: 2px solid $primary-color;
+          outline: 1px solid $primary-color;
           border: 1px solid $primary-color;
         }
   

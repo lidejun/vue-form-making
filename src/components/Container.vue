@@ -161,7 +161,6 @@
           </cus-dialog>
         </el-container>
       </el-main>
-      <el-footer height="30px" style="font-weight: 600;">Powered by <a target="_blank" href="https://github.com/GavinZhuLei/vue-form-making">vue-form-making</a></el-footer>
     </el-container>
   </div>
 </template>
@@ -220,7 +219,7 @@ export default {
     },
     layoutFields: {
       type: Array,
-      default: () => ['grid']
+      default: () => ['grid','divider']
     }
   },
   data () {
@@ -306,9 +305,6 @@ export default {
           name: this.$t(`fm.components.fields.${item.type}`)
         }
       })
-    },
-    handleGoGithub () {
-      window.location.href = 'https://github.com/GavinZhuLei/vue-form-making'
     },
     handleConfigSelect (value) {
       this.configTab = value

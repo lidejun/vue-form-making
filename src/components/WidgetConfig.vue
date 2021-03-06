@@ -154,9 +154,10 @@
         </div>
       </el-form-item>
 
-      <el-form-item :label="$t('fm.config.widget.defaultValue')" v-if="Object.keys(data.options).indexOf('defaultValue')>=0 && (data.type == 'textarea' || data.type == 'input' || data.type=='rate' || data.type=='color' || data.type=='switch')">
+      <el-form-item :label="$t('fm.config.widget.defaultValue')" v-if="Object.keys(data.options).indexOf('defaultValue')>=0 && (data.type == 'textarea' || data.type == 'text' || data.type == 'input' || data.type=='rate' || data.type=='color' || data.type=='switch')">
         <el-input v-if="data.type=='textarea'" type="textarea" :rows="5" v-model="data.options.defaultValue"></el-input>
         <el-input v-if="data.type=='input'" v-model="data.options.defaultValue"></el-input>
+        <el-input v-if="data.type=='text'" v-model="data.options.defaultValue"></el-input>
         <el-rate v-if="data.type == 'rate'" style="display:inline-block;vertical-align: middle;" :max="data.options.max" :allow-half="data.options.allowHalf" v-model="data.options.defaultValue"></el-rate>
         <el-button type="text" v-if="data.type == 'rate'" style="display:inline-block;vertical-align: middle;margin-left: 10px;" @click="data.options.defaultValue=0">{{$t('fm.actions.clear')}}</el-button>
         <el-color-picker 
@@ -257,6 +258,16 @@
             <el-option value="Object" :label="$t('fm.config.widget.object')"></el-option>
             <el-option value="Array" :label="$t('fm.config.widget.array')"></el-option>
           </el-select>
+        </el-form-item>
+      </template>
+
+      <template v-if="data.type=='divider'">
+        <el-form-item :label="$t('fm.config.widget.contentPosition')">
+          <el-radio-group v-model="data.options.contentPosition" size="mini" style="margin-bottom:10px;">
+            <el-radio-button :label="'left'">{{$t('fm.config.widget.left')}}</el-radio-button>
+            <el-radio-button :label="'center'">{{$t('fm.config.widget.center')}}</el-radio-button>
+            <el-radio-button :label="'right'">{{$t('fm.config.widget.right')}}</el-radio-button>
+          </el-radio-group>
         </el-form-item>
       </template>
 

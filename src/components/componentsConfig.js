@@ -222,6 +222,8 @@ export const basicComponents = [
     options: {
       defaultValue: 'This is a text',
       customClass: '',
+      width: '100%',
+      placeholder: '',
     }
   }
 ]
@@ -305,5 +307,17 @@ export const layoutComponents = [
       justify: 'start',
       align: 'top'
     }
+  },
+  {
+    type: 'divider',
+    icon: 'icon-wenzishezhi-',
+    options: {
+      defaultValue: '分隔线',
+      customClass: '',
+      width: '100%',
+      placeholder: '',
+      contentPosition:"left"
+    }
   }
+  
 ]
